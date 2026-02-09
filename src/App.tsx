@@ -24,7 +24,7 @@ function EmploymentProofVisual() {
           <div className="proof-box proof-box--yellow">
             <span className="proof-box-label proof-box-label--yellow">3. RECENT DATE</span>
             <span className="proof-box-value proof-box-value--yellow">Jan 15, 2025</span>
-            <span className="proof-box-hint">Within the last 60 days</span>
+            <span className="proof-box-hint">Within the last 30 days</span>
           </div>
         </div>
         <div className="proof-warning">
@@ -45,36 +45,36 @@ function SelfEmploymentProofVisual() {
   return (
     <div className="proof-card">
       <div className="proof-card-header">SELF-EMPLOYMENT / CORPORATION — 2 PROOFS REQUIRED</div>
-      <div className="proof-card-body">
-        <p className="proof-card-subtitle">You must provide <strong>BOTH</strong> of the following documents:</p>
+      <div className="proof-card-body proof-card-body--self">
+        <p className="proof-card-subtitle proof-card-subtitle--lg">You must provide <strong>BOTH</strong> of the following documents:</p>
         <div className="proof-boxes proof-boxes--two">
-          <div className="proof-box proof-box--green">
-            <span className="proof-box-label proof-box-label--green">1. PROOF OF INCORPORATION</span>
-            <div className="proof-doc-icon">
-              <div className="proof-line" style={{ width: '50%' }} />
-              <div className="proof-line" style={{ width: '70%' }} />
-              <div className="proof-line" style={{ width: '40%' }} />
-              <div className="proof-line" style={{ width: '60%' }} />
+          <div className="proof-box proof-box--blue proof-box--lg">
+            <span className="proof-box-label proof-box-label--lg">1. PROOF OF INCORPORATION</span>
+            <div className="proof-doc-icon proof-doc-icon--blue">
+              <div className="proof-line proof-line--blue" style={{ width: '50%' }} />
+              <div className="proof-line proof-line--blue" style={{ width: '70%' }} />
+              <div className="proof-line proof-line--blue" style={{ width: '40%' }} />
+              <div className="proof-line proof-line--blue" style={{ width: '60%' }} />
             </div>
-            <span className="proof-box-value proof-box-value--green">Certificate of Incorporation</span>
-            <span className="proof-box-hint">or Business Registration document</span>
+            <span className="proof-box-value proof-box-value--blue proof-box-value--lg">Certificate of Incorporation</span>
+            <span className="proof-box-hint proof-box-hint--lg">or Business Registration document</span>
           </div>
-          <div className="proof-box proof-box--green">
-            <span className="proof-box-label proof-box-label--green">2. TAX FORMS (2 YEARS)</span>
+          <div className="proof-box proof-box--purple proof-box--lg">
+            <span className="proof-box-label proof-box-label--purple proof-box-label--lg">2. TAX FORMS (2 YEARS)</span>
             <div className="proof-doc-stack">
-              <div className="proof-doc-icon">
-                <div className="proof-line" style={{ width: '50%' }} />
-                <div className="proof-line" style={{ width: '65%' }} />
-                <div className="proof-line" style={{ width: '35%' }} />
+              <div className="proof-doc-icon proof-doc-icon--purple">
+                <div className="proof-line proof-line--purple" style={{ width: '50%' }} />
+                <div className="proof-line proof-line--purple" style={{ width: '65%' }} />
+                <div className="proof-line proof-line--purple" style={{ width: '35%' }} />
               </div>
-              <div className="proof-doc-icon proof-doc-icon--offset">
-                <div className="proof-line" style={{ width: '50%' }} />
-                <div className="proof-line" style={{ width: '65%' }} />
-                <div className="proof-line" style={{ width: '35%' }} />
+              <div className="proof-doc-icon proof-doc-icon--purple proof-doc-icon--offset">
+                <div className="proof-line proof-line--purple" style={{ width: '50%' }} />
+                <div className="proof-line proof-line--purple" style={{ width: '65%' }} />
+                <div className="proof-line proof-line--purple" style={{ width: '35%' }} />
               </div>
             </div>
-            <span className="proof-box-value proof-box-value--green">T1 General, T2 Corporate, or Notice of Assessment</span>
-            <span className="proof-box-hint">Preferably for the 2 previous tax years</span>
+            <span className="proof-box-value proof-box-value--purple proof-box-value--lg">T1 General, T2 Corporate, or Notice of Assessment</span>
+            <span className="proof-box-hint proof-box-hint--lg">Preferably for the 2 previous tax years</span>
           </div>
         </div>
         <div className="proof-note">
@@ -132,6 +132,14 @@ function ProofOfIncomeSection() {
           <SelfEmploymentProofVisual />
         </>
       )}
+
+      <div className="proof-rejection-notice">
+        <div className="proof-rejection-icon">!</div>
+        <div className="proof-rejection-content">
+          <strong>Important: Documents that do not meet the above requirements will not be accepted.</strong>
+          <span>Incomplete, illegible, or non-compliant proof of income will result in delays or denial of your application. Please ensure all submitted documents clearly satisfy every condition outlined above before uploading.</span>
+        </div>
+      </div>
     </div>
   )
 }
