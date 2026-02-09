@@ -3,167 +3,86 @@ import './App.css'
 
 function EmploymentProofVisual() {
   return (
-    <svg
-      viewBox="0 0 780 390"
-      xmlns="http://www.w3.org/2000/svg"
-      className="proof-svg"
-      aria-label="Proof of income requirements diagram showing three required elements: your full name, income amount (no e-transfers), and a recent date"
-    >
-      {/* Background */}
-      <rect x="0" y="0" width="780" height="390" rx="12" fill="#f0fdf4" stroke="#86efac" strokeWidth="2" />
-
-      {/* Title bar */}
-      <rect x="0" y="0" width="780" height="48" rx="12" fill="#166534" />
-      <rect x="0" y="24" width="780" height="24" fill="#166534" />
-      <text x="390" y="32" textAnchor="middle" fill="#ffffff" fontSize="16" fontWeight="700" fontFamily="system-ui, sans-serif">
-        SAMPLE PROOF OF INCOME DOCUMENT
-      </text>
-
-      {/* Mock document body */}
-      <rect x="30" y="70" width="720" height="290" rx="8" fill="#ffffff" stroke="#d1fae5" strokeWidth="1.5" />
-
-      {/* Decorative header lines in doc */}
-      <rect x="50" y="85" width="200" height="8" rx="4" fill="#d1fae5" />
-      <rect x="50" y="100" width="140" height="8" rx="4" fill="#d1fae5" />
-
-      {/* --- BOX 1: Name (blue) --- */}
-      <rect x="50" y="125" width="210" height="80" rx="6" fill="#eef4ff" stroke="#3b82f6" strokeWidth="2.5" strokeDasharray="7,4" />
-      <text x="155" y="152" textAnchor="middle" fill="#1e3a5f" fontSize="11" fontWeight="700" fontFamily="system-ui, sans-serif">
-        1. YOUR FULL NAME
-      </text>
-      <text x="155" y="175" textAnchor="middle" fill="#3b82f6" fontSize="18" fontWeight="700" fontFamily="system-ui, sans-serif">
-        John A. Smith
-      </text>
-      <text x="155" y="195" textAnchor="middle" fill="#64748b" fontSize="10" fontFamily="system-ui, sans-serif">
-        Must match your application name
-      </text>
-
-      {/* --- BOX 2: Income Amount --- */}
-      <rect x="285" y="125" width="210" height="80" rx="6" fill="#f0fdf4" stroke="#22c55e" strokeWidth="2.5" strokeDasharray="7,4" />
-      <text x="390" y="152" textAnchor="middle" fill="#14532d" fontSize="11" fontWeight="700" fontFamily="system-ui, sans-serif">
-        2. INCOME AMOUNT
-      </text>
-      <text x="390" y="175" textAnchor="middle" fill="#16a34a" fontSize="18" fontWeight="700" fontFamily="system-ui, sans-serif">
-        $3,250.00
-      </text>
-      <text x="390" y="195" textAnchor="middle" fill="#64748b" fontSize="10" fontFamily="system-ui, sans-serif">
-        Paystub / bank deposit / CRA etc.
-      </text>
-
-      {/* --- BOX 3: Recent Date (yellow) --- */}
-      <rect x="520" y="125" width="210" height="80" rx="6" fill="#fefce8" stroke="#eab308" strokeWidth="2.5" strokeDasharray="7,4" />
-      <text x="625" y="152" textAnchor="middle" fill="#713f12" fontSize="11" fontWeight="700" fontFamily="system-ui, sans-serif">
-        3. RECENT DATE
-      </text>
-      <text x="625" y="175" textAnchor="middle" fill="#ca8a04" fontSize="18" fontWeight="700" fontFamily="system-ui, sans-serif">
-        Jan 15, 2025
-      </text>
-      <text x="625" y="195" textAnchor="middle" fill="#64748b" fontSize="10" fontFamily="system-ui, sans-serif">
-        Within the last 60 days
-      </text>
-
-      {/* No E-Transfer warning — fully contained red box */}
-      <rect x="50" y="225" width="680" height="70" rx="8" fill="#fef2f2" stroke="#ef4444" strokeWidth="2" />
-      <text x="390" y="250" textAnchor="middle" fill="#dc2626" fontSize="13" fontWeight="700" fontFamily="system-ui, sans-serif">
-        E-TRANSFERS ARE NOT ACCEPTED AS PROOF OF INCOME
-      </text>
-      <text x="390" y="270" textAnchor="middle" fill="#991b1b" fontSize="10" fontFamily="system-ui, sans-serif">
-        Provide paystubs, employment letters, bank statements,
-      </text>
-      <text x="390" y="284" textAnchor="middle" fill="#991b1b" fontSize="10" fontFamily="system-ui, sans-serif">
-        CRA Notice of Assessment, or similar official documents
-      </text>
-
-      {/* Decorative bottom lines */}
-      <rect x="50" y="315" width="680" height="6" rx="3" fill="#ecfdf5" />
-      <rect x="50" y="328" width="500" height="6" rx="3" fill="#ecfdf5" />
-      <rect x="50" y="341" width="580" height="6" rx="3" fill="#ecfdf5" />
-    </svg>
+    <div className="proof-card">
+      <div className="proof-card-header">SAMPLE PROOF OF INCOME DOCUMENT</div>
+      <div className="proof-card-body">
+        <div className="proof-card-lines">
+          <div className="proof-line" style={{ width: '55%' }} />
+          <div className="proof-line" style={{ width: '35%' }} />
+        </div>
+        <div className="proof-boxes">
+          <div className="proof-box proof-box--blue">
+            <span className="proof-box-label">1. YOUR FULL NAME</span>
+            <span className="proof-box-value proof-box-value--blue">John A. Smith</span>
+            <span className="proof-box-hint">Must match your application name</span>
+          </div>
+          <div className="proof-box proof-box--green">
+            <span className="proof-box-label proof-box-label--green">2. INCOME AMOUNT</span>
+            <span className="proof-box-value proof-box-value--green">$3,250.00</span>
+            <span className="proof-box-hint">Paystub / bank deposit / CRA etc.</span>
+          </div>
+          <div className="proof-box proof-box--yellow">
+            <span className="proof-box-label proof-box-label--yellow">3. RECENT DATE</span>
+            <span className="proof-box-value proof-box-value--yellow">Jan 15, 2025</span>
+            <span className="proof-box-hint">Within the last 60 days</span>
+          </div>
+        </div>
+        <div className="proof-warning">
+          <strong>E-TRANSFERS ARE NOT ACCEPTED AS PROOF OF INCOME</strong>
+          <span>Provide paystubs, employment letters, bank statements, CRA Notice of Assessment, or similar official documents</span>
+        </div>
+        <div className="proof-card-lines">
+          <div className="proof-line" style={{ width: '90%' }} />
+          <div className="proof-line" style={{ width: '65%' }} />
+          <div className="proof-line" style={{ width: '75%' }} />
+        </div>
+      </div>
+    </div>
   )
 }
 
 function SelfEmploymentProofVisual() {
   return (
-    <svg
-      viewBox="0 0 780 420"
-      xmlns="http://www.w3.org/2000/svg"
-      className="proof-svg"
-      aria-label="Self-employment proof of income requirements: proof of incorporation and tax forms for 2 previous years"
-    >
-      {/* Background */}
-      <rect x="0" y="0" width="780" height="420" rx="12" fill="#f0fdf4" stroke="#86efac" strokeWidth="2" />
-
-      {/* Title bar */}
-      <rect x="0" y="0" width="780" height="48" rx="12" fill="#166534" />
-      <rect x="0" y="24" width="780" height="24" fill="#166534" />
-      <text x="390" y="32" textAnchor="middle" fill="#ffffff" fontSize="16" fontWeight="700" fontFamily="system-ui, sans-serif">
-        SELF-EMPLOYMENT / CORPORATION — 2 PROOFS REQUIRED
-      </text>
-
-      {/* Mock document body */}
-      <rect x="30" y="70" width="720" height="320" rx="8" fill="#ffffff" stroke="#d1fae5" strokeWidth="1.5" />
-
-      {/* Subtitle */}
-      <text x="390" y="100" textAnchor="middle" fill="#14532d" fontSize="13" fontWeight="600" fontFamily="system-ui, sans-serif">
-        You must provide BOTH of the following documents:
-      </text>
-
-      {/* --- BOX 1: Proof of Incorporation --- */}
-      <rect x="60" y="125" width="310" height="140" rx="8" fill="#f0fdf4" stroke="#22c55e" strokeWidth="2.5" strokeDasharray="7,4" />
-      <text x="215" y="152" textAnchor="middle" fill="#14532d" fontSize="12" fontWeight="700" fontFamily="system-ui, sans-serif">
-        1. PROOF OF INCORPORATION
-      </text>
-      {/* Mini doc icon */}
-      <rect x="175" y="165" width="80" height="55" rx="4" fill="#dcfce7" stroke="#86efac" strokeWidth="1.5" />
-      <rect x="185" y="175" width="40" height="5" rx="2" fill="#86efac" />
-      <rect x="185" y="185" width="55" height="5" rx="2" fill="#86efac" />
-      <rect x="185" y="195" width="30" height="5" rx="2" fill="#86efac" />
-      <rect x="185" y="205" width="50" height="5" rx="2" fill="#86efac" />
-      <text x="215" y="240" textAnchor="middle" fill="#16a34a" fontSize="11" fontWeight="600" fontFamily="system-ui, sans-serif">
-        Certificate of Incorporation
-      </text>
-      <text x="215" y="255" textAnchor="middle" fill="#64748b" fontSize="9.5" fontFamily="system-ui, sans-serif">
-        or Business Registration document
-      </text>
-
-      {/* --- BOX 2: Tax Forms --- */}
-      <rect x="410" y="125" width="310" height="140" rx="8" fill="#f0fdf4" stroke="#22c55e" strokeWidth="2.5" strokeDasharray="7,4" />
-      <text x="565" y="152" textAnchor="middle" fill="#14532d" fontSize="12" fontWeight="700" fontFamily="system-ui, sans-serif">
-        2. TAX FORMS (2 YEARS)
-      </text>
-      {/* Two stacked mini doc icons */}
-      <rect x="520" y="163" width="70" height="45" rx="4" fill="#dcfce7" stroke="#86efac" strokeWidth="1.5" />
-      <rect x="530" y="171" width="35" height="4" rx="2" fill="#86efac" />
-      <rect x="530" y="179" width="45" height="4" rx="2" fill="#86efac" />
-      <rect x="530" y="187" width="25" height="4" rx="2" fill="#86efac" />
-      <rect x="535" y="170" width="70" height="45" rx="4" fill="#dcfce7" stroke="#86efac" strokeWidth="1.5" />
-      <rect x="545" y="178" width="35" height="4" rx="2" fill="#86efac" />
-      <rect x="545" y="186" width="45" height="4" rx="2" fill="#86efac" />
-      <rect x="545" y="194" width="25" height="4" rx="2" fill="#86efac" />
-      <text x="565" y="234" textAnchor="middle" fill="#16a34a" fontSize="11" fontWeight="600" fontFamily="system-ui, sans-serif">
-        T1 General, T2 Corporate,
-      </text>
-      <text x="565" y="248" textAnchor="middle" fill="#16a34a" fontSize="11" fontWeight="600" fontFamily="system-ui, sans-serif">
-        or Notice of Assessment
-      </text>
-      <text x="565" y="260" textAnchor="middle" fill="#64748b" fontSize="9.5" fontFamily="system-ui, sans-serif">
-        Preferably for the 2 previous tax years
-      </text>
-
-      {/* Important note */}
-      <rect x="60" y="285" width="660" height="50" rx="8" fill="#f0fdf4" stroke="#16a34a" strokeWidth="2" />
-      <text x="390" y="307" textAnchor="middle" fill="#14532d" fontSize="11" fontWeight="700" fontFamily="system-ui, sans-serif">
-        Tax forms must be in your name (or your corporation's name) and show income figures.
-      </text>
-      <text x="390" y="324" textAnchor="middle" fill="#14532d" fontSize="11" fontWeight="600" fontFamily="system-ui, sans-serif">
-        Documents must clearly display your name, income amounts, and dates.
-      </text>
-
-      {/* Decorative bottom lines */}
-      <rect x="50" y="355" width="680" height="6" rx="3" fill="#ecfdf5" />
-      <rect x="50" y="368" width="500" height="6" rx="3" fill="#ecfdf5" />
-      <rect x="50" y="381" width="580" height="6" rx="3" fill="#ecfdf5" />
-    </svg>
+    <div className="proof-card">
+      <div className="proof-card-header">SELF-EMPLOYMENT / CORPORATION — 2 PROOFS REQUIRED</div>
+      <div className="proof-card-body">
+        <p className="proof-card-subtitle">You must provide <strong>BOTH</strong> of the following documents:</p>
+        <div className="proof-boxes proof-boxes--two">
+          <div className="proof-box proof-box--green">
+            <span className="proof-box-label proof-box-label--green">1. PROOF OF INCORPORATION</span>
+            <div className="proof-doc-icon">
+              <div className="proof-line" style={{ width: '50%' }} />
+              <div className="proof-line" style={{ width: '70%' }} />
+              <div className="proof-line" style={{ width: '40%' }} />
+              <div className="proof-line" style={{ width: '60%' }} />
+            </div>
+            <span className="proof-box-value proof-box-value--green">Certificate of Incorporation</span>
+            <span className="proof-box-hint">or Business Registration document</span>
+          </div>
+          <div className="proof-box proof-box--green">
+            <span className="proof-box-label proof-box-label--green">2. TAX FORMS (2 YEARS)</span>
+            <div className="proof-doc-stack">
+              <div className="proof-doc-icon">
+                <div className="proof-line" style={{ width: '50%' }} />
+                <div className="proof-line" style={{ width: '65%' }} />
+                <div className="proof-line" style={{ width: '35%' }} />
+              </div>
+              <div className="proof-doc-icon proof-doc-icon--offset">
+                <div className="proof-line" style={{ width: '50%' }} />
+                <div className="proof-line" style={{ width: '65%' }} />
+                <div className="proof-line" style={{ width: '35%' }} />
+              </div>
+            </div>
+            <span className="proof-box-value proof-box-value--green">T1 General, T2 Corporate, or Notice of Assessment</span>
+            <span className="proof-box-hint">Preferably for the 2 previous tax years</span>
+          </div>
+        </div>
+        <div className="proof-note">
+          <strong>Tax forms must be in your name (or your corporation's name) and show income figures.</strong>
+          <span>Documents must clearly display your name, income amounts, and dates.</span>
+        </div>
+      </div>
+    </div>
   )
 }
 
