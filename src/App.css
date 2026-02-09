@@ -365,27 +365,34 @@
   font-weight: 600;
 }
 
-/* Warning box */
-.proof-warning {
-  background: #fef2f2;
-  border: 2px solid #ef4444;
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
-  text-align: center;
+/* E-transfer inline banner */
+.proof-etransfer-banner {
   display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
+  align-items: center;
+  gap: 0.55rem;
+  background: #fff8f0;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 0.6rem 0.85rem;
   margin-bottom: 1rem;
 }
 
-.proof-warning strong {
-  color: #dc2626;
-  font-size: 0.85rem;
+.proof-etransfer-x {
+  flex-shrink: 0;
+  color: #ea580c;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
-.proof-warning span {
-  color: #991b1b;
-  font-size: 0.75rem;
+.proof-etransfer-text {
+  font-size: 0.78rem;
+  color: #78350f;
+  line-height: 1.4;
+}
+
+.proof-etransfer-text strong {
+  color: #c2410c;
 }
 
 /* Note box (self-employment) */

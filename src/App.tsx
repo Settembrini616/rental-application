@@ -27,9 +27,11 @@ function EmploymentProofVisual() {
             <span className="proof-box-hint">Within the last 30 days</span>
           </div>
         </div>
-        <div className="proof-warning">
-          <strong>E-TRANSFERS ARE NOT ACCEPTED AS PROOF OF INCOME</strong>
-          <span>Provide paystubs, employment letters, bank statements, CRA Notice of Assessment, or similar official documents</span>
+        <div className="proof-etransfer-banner">
+          <span className="proof-etransfer-x">&#10005;</span>
+          <span className="proof-etransfer-text">
+            <strong>E-Transfers are not accepted as proof of income.</strong> Please provide paystubs, employment letters, bank statements, CRA Notice of Assessment, or similar official documents.
+          </span>
         </div>
         <div className="proof-card-lines">
           <div className="proof-line" style={{ width: '90%' }} />
